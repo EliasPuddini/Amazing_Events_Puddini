@@ -1,0 +1,282 @@
+*{
+    margin: 0;
+}
+
+html{
+    height: 100vh;
+}
+
+body{
+    width: 100vw;
+    overflow: hidden;
+    overflow-y: inherit;
+}
+
+.navbar1{
+    width: 100vw;
+    padding: 1vh;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: rgb(11, 11, 148);
+}
+
+.navbar1 a, .navbar1 img{
+    display: inline-flex;
+}
+
+.navbar1 img{
+    width: 15%;
+    height: 10%;
+}
+
+.link{
+    margin-top: 1vh;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar1 a{
+    
+    padding: 1vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: space-around;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: content-box;
+    color: white;
+}
+
+.navbar1 a:hover{
+    background-color: #804000;
+}
+
+.navbar2{
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1vw;
+    font-size: x-large;
+}
+
+.navbar2 a{
+    text-decoration: none;
+    scale: 1.5;
+    color: rgb(0, 255, 255);
+}
+
+.titulo{
+    font-size: x-large;
+}
+
+.filtro{
+    background-color: rgb(5, 70, 48);
+    padding: 1vw;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.filtro form{
+    width: 85%;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.category{
+    display: inline;
+}
+
+.filtro label{
+    padding: 1vw;
+}
+
+.search{
+    width: 50%;
+    display: inline-flex;
+    justify-content: end;
+}
+
+.search label{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.search input{
+    width: 70%;
+}
+
+.lupa{
+    width: 10%;
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.cards_contain{
+    width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgb(11, 11, 148);
+}
+
+.card_alpha{
+    width: 250px;
+    background-color: #002;
+    padding: 5vw;
+    margin: 1vw;
+    border-radius: 5%;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+
+}
+
+.card_alpha *{
+    padding: 1vw;
+    display: block;
+}
+
+.card_alpha .info{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card_alpha .info *{
+    display: inline;
+}
+
+.card_alpha img{
+    box-sizing: content-box;
+    width: 90%;
+}
+
+.boton{
+    border-radius: 15%;
+}
+
+.form{
+    background-color: rgb(11, 11, 148);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 5vh;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.form form{
+    padding: 1vw;
+    border-radius: 5%;
+    background-color: #012;
+}
+
+.form form label, .form form input{
+    display: block;
+}
+
+.form form label{
+    margin-top: 5px;
+}
+
+.form form .button{
+    margin-top: 5px;
+    display: flex;
+    justify-content: end;
+}
+
+.tabla_content{
+    width: 100vw;
+    background-color: rgb(11, 11, 148);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+}
+
+.tabla{
+    background-color: #002;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.tabla .subtitulo{
+    background: #804000;
+}
+
+.tabla td{
+    border: 1px solid #fff;
+    padding: 1vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    color: #fff;
+    background-color: #000;
+    width: 100vw;
+    height: 5vh;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    padding: 1px 0px;
+}
+
+.icono{
+    padding: 5px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.icono_content{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.cohort{
+    width: 60%;
+    text-align: end;
+}
+
