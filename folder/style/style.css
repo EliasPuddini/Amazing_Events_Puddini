@@ -83,7 +83,7 @@ header{
 
 .navbar2 a{
     text-decoration: none;
-    scale: 1.5;
+    font-size: xx-large;
     width: 100%;
     justify-content: center;
     color: rgb(0, 255, 255);
@@ -364,4 +364,11 @@ header{
 .cohort{
     width: 60%;
     text-align: end;
+}
+
+
+
+
+.display_none{
+    display: none;
 }
