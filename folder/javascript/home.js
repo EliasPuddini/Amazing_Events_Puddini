@@ -40,24 +40,29 @@ console.log(texto);
 
 
 search.addEventListener("click", () =>{
-    string_busqueda = texto.value;
+    string_busqueda = Array.from(texto)[0].value;
     mostrar();
 })
 
 
 
 function mostrar(){
-
+    hijo = ``;
     if(string_busqueda == "" && chequeados.length != 0){
-        padre.innerHTML = ``;
-        console.log(Carts_array.lenght);
+        let array_auxiliar = []
         for(let x = 0; x < chequeados.length; x++){
-            console.log(Carts_array.length);
             console.log(chequeados)
-            let Carts_array_filtred = Carts_array.filter(evento_a_filtrar => evento_a_filtrar === chequeados[x].id);
-            Carts_array = Carts_array_filtred;
-
+            for(let u = 0; u < Carts_array.length;u++){
+                for(let t = 0; t < chequeados.length;t++){
+                    if(Carts_array[u].category == chequeados[t]){
+                        array_auxiliar.push(Carts_array[u]);
+                    }
+                }
+            }
         }
+
+        Carts_array = array_auxiliar;
+
         for(let xa = 0; xa < Carts_array.length; xa++){
             hijo += `
             <div class="card_alpha">
@@ -76,9 +81,10 @@ function mostrar(){
         }console.log("funciona")
         
     }else if(string_busqueda != "" && chequeados.length == 0){
-        padre.innerHTML = ``;
+
+        hijo = ``;
         for(let y = 0; y < Carts_array.length;y++){
-            if(Carts_array[y].name == string_busqueda){
+            if(Carts_array[y].name == string_busqueda || Carts_array[y].date == string_busqueda){
                 hijo += `
                 <div class="card_alpha">
                     <img src="${Carts_array[y].image}" alt="event_image">
@@ -92,16 +98,29 @@ function mostrar(){
                 
                 `;
                 padre.innerHTML = hijo;   
+                console.log(Carts_array[y])
             }
+            
         }
     }else if(string_busqueda != "" && chequeados.lenght != 0){
-        padre.innerHTML = ``;
-        for(let w = 0; w < chequeados.length; w++){
-            let Carts_array_filtred = Carts_array.filter(evento_a_filtrar => evento_a_filtrar === chequeados[w].value);
-            Carts_array = Carts_array_filtred;
+
+        
+        let array_auxiliar2 = []
+        for(let x = 0; x < chequeados.length; x++){
+            for(let u = 0; u < Carts_array.length;u++){
+                for(let t = 0; t < chequeados.length;t++){
+                    if(Carts_array[u].category == chequeados[t]){
+                        array_auxiliar2.push(Carts_array[u]);
+                    }
+                }
+            }
         }
-        for(let wa = 0;wa < Carts_array.length;wa++){
-            if(Carts_array[wa].name == string_busqueda){
+
+        Carts_array = array_auxiliar2;
+
+
+        for(let wa = 0; wa < Carts_array.length;wa++){
+            if(Carts_array[wa].name == string_busqueda || Carts_array[wa].date == string_busqueda){
                 hijo += `
                 <div class="card_alpha">
                     <img src="${Carts_array[wa].image}" alt="event_image">
@@ -115,8 +134,11 @@ function mostrar(){
                 
                 `;
                 padre.innerHTML = hijo;   
+                console.log(Carts_array[wa])
             }
+            
         }
+        
     }else if(string_busqueda == "" && chequeados.length == 0){
         padre.innerHTML = ``;
         for(let j = 0; j < Carts_array.length; j++){
