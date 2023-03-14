@@ -105,6 +105,7 @@ header{
 .filtro{
     background-color: rgb(5, 70, 48);
     padding: 1vw;
+    height: 15vh;
     display: flex;
     justify-content: space-around;
     color: #fff;
@@ -160,6 +161,7 @@ header{
 
 .cards_contain{
     width: 100vw;
+    min-height: 80vh;
     display: flex;
     flex-flow: row wrap;
     background-color: rgb(11, 11, 148);
