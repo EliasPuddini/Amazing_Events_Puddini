@@ -15,7 +15,7 @@
             <img src="./folder/img/Logo_Amazing_Events.png" alt="Logo">
             <div class="link">
                 <a href="./index.html">Home</a>
-                <a href="#">Upcomming Events</a>
+                <a href="./UpEvents.html">Upcomming Events</a>
                 <a href="./PastEvents.html">Past Events</a>
                 <a href="./contact.html">Contact</a>
                 <a href="./Stats.html">Stats</a>                
@@ -38,96 +38,60 @@
         </div>
         <div class="filtro">
             <form>
-                <div class="category">
+                <div class="category" id="escucha_categorias">
                     <label>
-                        <input type="checkbox" name="category1">
-                        Category
+                        <input type="checkbox" id="Food Fair">
+                        Food fair
                     </label>
                     <label>
-                        <input type="checkbox" name="category2">
-                        Category
+                        <input type="checkbox" id="Museum">
+                        Museum
                     </label>
                     <label>
-                        <input type="checkbox" name="category3">
-                        Category
+                        <input type="checkbox" id="Costume Party">
+                        Costume Party
                     </label>
                     <label>
-                        <input type="checkbox" name="category4">
-                        Category
-                    </label>                    
+                        <input type="checkbox" id="Music Concert">
+                        Music Concert
+                    </label>
+                    <label>
+                        <input type="checkbox" id="Race">
+                        Race
+                    </label>
+                    <label>
+                        <input type="checkbox" id="Book Exchange">
+                        Book Exchange
+                    </label>
+                    <label>
+                        <input type="checkbox" id="Cinema">
+                        Cinema
+                    </label>
                 </div>
-                <div class="search">
+                <div class="search" id="search_info">
                     <label>
-                        <input type="text" name="search">
-                    </label>                    
+                        <input id="busqueda" type="text" name="search">
+                    </label>
                 </div>
 
             </form>
-            <div class="lupa">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>                
+            
+            <div class="lupa" id="search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
             </div>
 
         </div>
 
-        <div class="cards_contain">
+        </div>
 
-            <div class="card_alpha">
-                <img src="./folder/img/Cinema.jpg" alt="event_image">
-                <h2>Titulo</h2>
-                <p>Descripción</p>
-                <div class="info">
-                    <p>Price $0000</p>
-                    <a href="./Details.html" class="info_to_details">Ver más</a>
-                </div>
-            </div>
+        <div class="cards_contain" id="cards_contain3">
 
-            <div class="card_alpha">
-                <img src="./folder/img/Costume_Party.jpg" alt="event_image">
-                <h2>Titulo</h2>
-                <p>Descripción</p>
-                <div class="info">
-                    <p>Price $0000</p>
-                    <a href="./Details.html" class="info_to_details">Ver más</a>  
-                </div>
-            </div>
-            <div class="card_alpha">
-                <img src="./folder/img/Food_Fair.jpg" alt="event_image">
-                <h2>Titulo</h2>
-                <p>Descripción</p>
-                <div class="info">
-                    <p>Price $0000</p>
-                    <a href="./Details.html" class="info_to_details">Ver más</a>  
-                </div>
-            </div>
-            <div class="card_alpha">
-                <img src="./folder/img/Marathon.jpg" alt="event_image">
-                <h2>Titulo</h2>
-                <p>Descripción</p>
-                <div class="info">
-                    <p>Price $0000</p>
-                    <a href="./Details.html" class="info_to_details">Ver más</a>  
-                </div>
-            </div>
-            <div class="card_alpha">
-                <img src="./folder/img/Museum_Tour.jpg" alt="event_image">
-                <h2>Titulo</h2>
-                <p>Descripción</p>
-                <div class="info">
-                    <p>Price $0000</p>
-                    <a href="./Details.html" class="info_to_details">Ver más</a>  
-                </div>
-            </div>
-            <div class="card_alpha">
-                <img src="./folder/img/Music_Concert.jpg" alt="event_image">
-                <h2>Titulo</h2>
-                <p>Descripción</p>
-                <div class="info">
-                    <p>Price $0000</p>
-                    <a href="./Details.html" class="info_to_details">Ver más</a>  
-                </div>
-            </div>
+
         </div>
 
     </main>
@@ -153,7 +117,9 @@
             Cohort FE13-TN
         </div>
 
-    </footer> 
+    </footer>
+    <script src="./folder/javascript/data.js"></script>
+    <script src="./folder/javascript/upEvents.js"></script>
 </body>
 
 </html>

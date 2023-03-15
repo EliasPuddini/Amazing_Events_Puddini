@@ -1,10 +1,5 @@
 let Carts_array = get_Carts(data, "events");
 
-
-
-var flag = true;
-
-
 let padre = document.getElementById("cards_contain");
 let hijo = "";
 
