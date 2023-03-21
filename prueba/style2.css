@@ -1,0 +1,380 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100vh;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: inherit;
+}
+
+header{
+    height: 9vh;
+}
+
+
+.navbar1{
+    width: 100vw;
+    height: 100%;
+    padding: 1vh;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+    background-color: rgb(11, 11, 148);
+}
+
+.navbar1 a, .navbar1 img{
+    display: inline-flex;
+}
+
+.navbar1 img{
+    width: 15%;
+    height: 100%;
+}
+
+.link{
+    margin-top: 1vh;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar1 a{
+    
+    padding: 1vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    text-decoration: none;
+    text-align: center;
+    box-sizing: content-box;
+    color: white;
+}
+
+.navbar1 a:hover{
+    background-color: #804000;
+}
+
+.navbar2{
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1vw;
+    font-size: x-large;
+    height: 8vh;
+}
+
+.navbar2 .flecha{
+    max-width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar2 a{
+    text-decoration: none;
+    scale: 1.5;
+    width: 100%;
+    justify-content: center;
+    color: rgb(0, 255, 255);
+}
+
+.navbar2 .titulo_content{
+    box-sizing: content-box;
+    max-width: 40%;
+    min-width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo h3{
+    font-size: x-large;
+    width: 100%;
+}
+
+.filtro{
+    background-color: rgb(5, 70, 48);
+    padding: 1vw;
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.filtro form{
+    width: 85%;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.category{
+    display: inline-flex;
+    flex-flow: row wrap;
+    max-width: 45%;
+}
+
+.filtro label{
+    padding: 1vw;
+}
+
+.search{
+    min-width: 45%;
+    display: inline-flex;
+    justify-content: end;
+}
+
+.search label{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.search input{
+    width: 70%;
+}
+
+.lupa{
+    width: 10%;
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.lupa svg{
+    min-width: 25%;
+    min-height: 50%;
+    border-radius: 100%;
+    background-color: #000;
+    padding: 0.5vw;
+}
+
+.cards_contain{
+    width: 100vw;
+    min-height: 80vh;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgb(11, 11, 148);
+    justify-content: space-around;
+}
+
+.card_alpha{
+    width: 250px;
+    background-color: #002;
+    padding: 5vw;
+    margin: 1vw;
+    border-radius: 5%;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    border: 1px rgb(0, 255, 255) solid;
+}
+
+.card_alpha *{
+    padding: 1vw;
+    display: block;
+}
+
+.card_alpha .info{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card_alpha .info *{
+    display: inline;
+}
+
+.card_alpha img{
+    box-sizing: content-box;
+    width: 90%;
+}
+
+.card_alpha .info_to_details{
+    border-radius: 15%;
+    text-decoration: none;
+    background-color: rgb(0, 255, 255);
+    padding: 1vw;
+}
+
+.form{
+    background-color: rgb(11, 11, 148);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 5vh;
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+}
+
+.form form{
+    padding: 1vw;
+    border-radius: 5%;
+    background-color: #012;
+    border: 1px solid rgb(0, 255, 255);
+}
+
+.form form label, .form form input{
+    display: block;
+}
+
+.form form label{
+    margin-top: 5px;
+}
+
+.form form .button{
+    margin-top: 5px;
+    display: flex;
+    justify-content: end;
+}
+
+.tabla_content{
+    min-height: 78vh;
+    width: 100vw;
+    background-color: rgb(11, 11, 148);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 2vw;
+}
+
+.tabla{
+    margin: 0;
+    background-color: #002;
+    border: 1px solid #fff;
+    color: #fff;
+    width: 100%;
+}
+
+.tabla .subtitulo{
+    background: #804000;
+    text-align: center;
+    font-size: large;
+}
+
+.tabla td{
+    border: 1px solid #fff;
+    padding: 1vw;
+    height: 1vh;
+    text-align: center;
+    width: 30%;
+}
+
+.tabla th{
+    border: 1px solid #fff;
+    min-height: 20%;
+}
+
+.titulo_dato_tabla{
+    min-height: 10%;
+}
+
+
+.details_body{
+    width: 100vw;
+    height: 86vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail_content{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    flex-flow: row wrap;
+}
+
+.detail_content .detail_img, .detail_content .detail_info{
+    width: 40%;
+    padding: 1%;
+    display: inline-flex;
+    border: 10px solid #000;
+}
+.detail_info{
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+}
+
+.detail_info div{
+    width: 80%;
+    text-align: center;
+}
+
+.detail_img{
+    box-sizing: content-box;
+    background-color: #000;
+}
+
+.detail_img img{
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+}
+
+.detail_info .capacity{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.detail_info .capacity p{
+    width: 46%;
+    padding: 1vw;
+}
+
+.detail_info .price{
+    width: 100%;
+    text-align: center;
+}
+
+
+.footer{
+    color: #fff;
+    background-color: #000;
+    width: 100vw;
+    height: 5vh;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    padding: 1px 0px;
+}
+
+.icono{
+    padding: 5px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.icono_content{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.cohort{
+    width: 60%;
+    text-align: end;
+}

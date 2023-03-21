@@ -3,20 +3,11 @@ async function TraerDatos(){
     try{
         const response = await fetch(url);
         const datos = await response.json()
-        let Carts_array1 = datos["events"]
+        let Carts_array = datos["events"]
+        let dato = Carts_array;
 
-        let array1 = [];
-
-        for(let j=0; j < Carts_array1.length; j++){
-            if(datos.currentDate > Carts_array1[j]["date"]){
-                array1.push(Carts_array1[j]);
-            }
-        }
-        console.log(array1);
-        let dato = array1;
-
-        const contenedor = document.getElementById('cards_contain3');
-        const contenedorChecks = document.getElementById('escucha_categorias3');
+        const contenedor = document.getElementById('cards_contain');
+        const contenedorChecks = document.getElementById('escucha_categorias');
         const input = document.querySelector('input');
 
         console.log(contenedorChecks)
@@ -100,14 +91,16 @@ async function TraerDatos(){
                                 <p>${elemento.description}</p>
                                 <div class="info">
                                     <p>Price $${elemento.price}</p>
-                                    <a href="./details.html?id=${elemento._id}" class="info_to_details">Ver más</a>
+                                    <a href="./details.html" class="info_to_details">Ver más</a>
                                 </div>
                             </div>
                             
                             `
             })
             contenedor.innerHTML = tarjetas
-    }}catch(error){
+    }
+    }
+    catch(error){
         console.log(error);
     }
 }
