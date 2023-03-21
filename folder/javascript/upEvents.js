@@ -1,167 +1,114 @@
-const Carts_array2 = get_Carts(data, "events");
+let url = "https://mindhub-xj03.onrender.com/api/amazing";
+async function TraerDatos(){
+    try{
+        const response = await fetch(url);
+        const datos = await response.json()
+        let Carts_array1 = datos["events"]
 
-let array2 = [];
+        let array1 = [];
 
-for(let j=0; j < Carts_array2.length; j++){
-    if(data.currentDate < Carts_array2[j]["date"]){
-        array2.push(Carts_array2[j]);
+        for(let j=0; j < Carts_array1.length; j++){
+            if(datos.currentDate < Carts_array1[j]["date"]){
+                array1.push(Carts_array1[j]);
+            }
+        }
+        console.log(array1);
+        let dato = array1;
+
+        const contenedor = document.getElementById('cards_contain2');
+        const contenedorChecks = document.getElementById('escucha_categorias2');
+        const input = document.querySelector('input');
+
+        console.log(contenedorChecks)
+
+        input.addEventListener('input',superFiltro);
+        contenedorChecks.addEventListener('change',superFiltro);
+
+
+        console.log(dato)
+
+        pintarTarjetas(dato)
+
+        ;
+        crearCheckboxes(dato);
+
+        function superFiltro(){
+
+
+            let arrayFiltrado1 = filtrarPorTexto(dato, input.value)
+            let arrayFiltrado2 = filtrarPorPais(arrayFiltrado1);
+            pintarTarjetas(arrayFiltrado2);
+        }
+
+        function crearCheckboxes(arrayInfo){
+            let checks = ''
+            let caracteristicasRepetidas = arrayInfo.map(elemento => elemento.category)
+            let caracteristicas = new Set(caracteristicasRepetidas.sort((a,b)=>{
+                if(a>b){
+                    return 1
+                }
+                if(a<b){
+                    return -1
+                }
+                return 0
+            }))
+            caracteristicas.forEach(elemento =>{
+                checks += `
+                <label>
+                    <input type="checkbox" id="${elemento}" value="${elemento}">
+                    ${elemento}
+                </label>
+            `
+            })
+            contenedorChecks.innerHTML = checks
+        }
+
+        function filtrarPorTexto(arrayDatos, texto){
+            let arrayFiltrado = arrayDatos.filter(elemento => elemento.name.toLowerCase().includes(texto.toLowerCase()))
+            return arrayFiltrado
+        }
+
+        function filtrarPorPais(arrayInfo){
+            let checkboxes = document.querySelectorAll("input[type='checkbox']")
+            console.log(checkboxes);
+            let arrayChecks = Array.from(checkboxes)
+            console.log(arrayChecks);
+            let checksChecked = arrayChecks.filter(check => check.checked)
+            console.log(checksChecked);
+            if(checksChecked.length == 0){
+                return arrayInfo
+            }
+            let checkValues = checksChecked.map(check => check.value)
+            console.log(checkValues);
+            let arrayFiltrado = arrayInfo.filter(elemento => checkValues.includes(elemento.category))
+            console.log(arrayFiltrado);
+            return arrayFiltrado
+        }
+
+        function pintarTarjetas(arrayDatos) {
+            if(arrayDatos.length == 0){
+                contenedor.innerHTML = "<h2 class='display-1 fw-bolder'>No hay coincidencias!</h2>"
+                return
+            }
+            let tarjetas = ''
+            arrayDatos.forEach(elemento => {
+                tarjetas += `
+                            </div>
+                            <div class="card_alpha">
+                                <img src="${elemento.image}" alt="event_image">
+                                <h2>${elemento.name}</h2>
+                                <p>${elemento.description}</p>
+                                <div class="info">
+                                    <p>Price $${elemento.price}</p>
+                                    <a href="./details.html?id=${elemento._id}" class="info_to_details">Ver más</a>
+                                </div>
+                            </div>
+                            
+                            `
+            })
+            contenedor.innerHTML = tarjetas
+    }}catch(error){
+        console.log(error);
     }
 }
-console.log(array2);
-let Carts_array = array2
-
-let padre2 = document.getElementById("cards_contain3");
-let hijo2 = "";
-
-let chequeados = [];
-
-
-let escucha = document.getElementById("escucha_categorias");
-let divcheckboxes = document.querySelectorAll('input[type="checkbox"]');
-
-console.log(divcheckboxes);
-
-escucha.addEventListener("click",() =>{
-    divcheckboxes.forEach(element => {
-        element.addEventListener("click",() =>{
-            if(element.checked){
-                chequeados.push(element.id);            
-            }
-        })
-    });
-    let result = chequeados.filter((item,index)=>{
-        return chequeados.indexOf(item) === index;
-    })
-    chequeados = result;
-    mostrar();
-})
-
-let search = document.getElementById("search");
-let texto = document.querySelectorAll('input[type="text"]');
-let string_busqueda = "";
-
-console.log(search);
-console.log(texto);
-
-
-search.addEventListener("click", () =>{
-    string_busqueda = Array.from(texto)[0].value;
-    mostrar();
-})
-
-
-
-function mostrar(){
-    hijo2 = ``;
-    if(string_busqueda == "" && chequeados.length != 0){
-        let array_auxiliar = []
-        for(let x = 0; x < chequeados.length; x++){
-            console.log(chequeados)
-            for(let u = 0; u < Carts_array.length;u++){
-                for(let t = 0; t < chequeados.length;t++){
-                    if(Carts_array[u].category == chequeados[t]){
-                        array_auxiliar.push(Carts_array[u]);
-                    }
-                }
-            }
-        }
-
-        Carts_array = array_auxiliar;
-
-        for(let xa = 0; xa < Carts_array.length; xa++){
-            hijo2 += `
-            <div class="card_alpha">
-                <img src="${Carts_array[xa].image}" alt="event_image">
-                <h2>${Carts_array[xa].name}</h2>
-                <p>${Carts_array[xa].description}</p>
-                <div class="info">
-                    <p>Price $${Carts_array[xa].price}</p>
-                    <a href="./details.html?id=${Carts_array[xa]._id}" class="info_to_details">Ver más</a>
-                </div>
-            </div>
-            
-            `;
-            padre2.innerHTML = hijo2;
-            
-        }console.log("funciona")
-        
-    }else if(string_busqueda != "" && chequeados.length == 0){
-
-        hijo2 = ``;
-        for(let y = 0; y < Carts_array.length;y++){
-            if(Carts_array[y].name == string_busqueda || Carts_array[y].date == string_busqueda){
-                hijo2 += `
-                <div class="card_alpha">
-                    <img src="${Carts_array[y].image}" alt="event_image">
-                    <h2>${Carts_array[y].name}</h2>
-                    <p>${Carts_array[y].description}</p>
-                    <div class="info">
-                        <p>Price $${Carts_array[y].price}</p>
-                        <a href="./details.html?id=${Carts_array[y]._id}" class="info_to_details">Ver más</a>
-                    </div>
-                </div>
-                
-                `;
-                padre2.innerHTML = hijo2;   
-                console.log(Carts_array[y])
-            }
-            
-        }
-    }else if(string_busqueda != "" && chequeados.lenght != 0){
-
-        
-        let array_auxiliar2 = []
-        for(let x = 0; x < chequeados.length; x++){
-            for(let u = 0; u < Carts_array.length;u++){
-                for(let t = 0; t < chequeados.length;t++){
-                    if(Carts_array[u].category == chequeados[t]){
-                        array_auxiliar2.push(Carts_array[u]);
-                    }
-                }
-            }
-        }
-
-        Carts_array = array_auxiliar2;
-
-
-        for(let wa = 0; wa < Carts_array.length;wa++){
-            if(Carts_array[wa].name == string_busqueda || Carts_array[wa].date == string_busqueda){
-                hijo2 += `
-                <div class="card_alpha">
-                    <img src="${Carts_array[wa].image}" alt="event_image">
-                    <h2>${Carts_array[wa].name}</h2>
-                    <p>${Carts_array[wa].description}</p>
-                    <div class="info">
-                        <p>Price $${Carts_array[wa].price}</p>
-                        <a href="./details.html?id=${Carts_array[wa]._id}" class="info_to_details">Ver más</a>
-                    </div>
-                </div>
-                
-                `;
-                padre2.innerHTML = hijo2;   
-                console.log(Carts_array[wa])
-            }
-            
-        }
-        
-    }else if(string_busqueda == "" && chequeados.length == 0){
-        for(let j = 0; j < Carts_array.length; j++){
-            hijo2 += `
-            <div class="card_alpha">
-                <img src="${Carts_array[j].image}" alt="event_image">
-                <h2>${Carts_array[j].name}</h2>
-                <p>${Carts_array[j].description}</p>
-                <div class="info">
-                    <p>Price $${Carts_array[j].price}</p>
-                    <a href="./details.html?id=${Carts_array[j]._id}" class="info_to_details">Ver más</a>
-                </div>
-            </div>
-            
-            `;
-            padre2.innerHTML = hijo2;   
-        }
-        console.log(Carts_array.length)
-    }
-
-}
-mostrar();
+TraerDatos()
