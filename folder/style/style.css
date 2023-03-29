@@ -5,29 +5,32 @@
 
 html{
     height: 100vh;
+    width: 100vw;
 }
 
 body{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100% ;
     overflow: hidden;
     overflow-y: inherit;
 }
 
 header{
-    height: 9vh;
+    min-height: 9vh;
 }
 
 
 .navbar1{
     width: 100vw;
-    height: 100%;
+    min-height: 9vh;
     padding: 1vh;
     display: inline-flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    align-items: center;
     box-sizing: border-box;
-    background-color: rgb(11, 11, 148);
+    background-color: #23145b;
+    /*background-color: rgb(11, 11, 148);*/
 }
 
 .navbar1 a, .navbar1 img{
@@ -35,14 +38,16 @@ header{
 }
 
 .navbar1 img{
-    width: 15%;
-    height: 100%;
+    max-width: 15%;
+    min-width: 8%;
+    max-height: 8vh;
 }
 
 .link{
     margin-top: 1vh;
     width: 70%;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-evenly;
 }
 
@@ -64,7 +69,7 @@ header{
 }
 
 .navbar2{
-    background-color: #000;
+    background-color: #0a0310;
     color: #fff;
     display: flex;
     justify-content: space-around;
@@ -103,9 +108,11 @@ header{
 }
 
 .filtro{
-    background-color: rgb(5, 70, 48);
+    background-color: #09456c;
+    background-color: rgb(64, 31, 141);
+    /*background-color: rgb(5, 70, 48);*/
+    min-height: 15vh;
     padding: 1vw;
-    height: 15vh;
     display: flex;
     justify-content: space-around;
     color: #fff;
@@ -164,7 +171,8 @@ header{
     min-height: 80vh;
     display: flex;
     flex-flow: row wrap;
-    background-color: rgb(11, 11, 148);
+    background-color: #6C1BF7;
+    /*background-color: #0b0b93;*/
     justify-content: space-around;
 }
 
@@ -181,7 +189,8 @@ header{
     align-items: center;
     text-align: center;
     color: #fff;
-    border: 1px rgb(0, 255, 255) solid;
+    /*border: 1px rgb(0, 255, 255) solid;*/
+    border: 1px #23145b solid;
 }
 
 .card_alpha *{
@@ -261,7 +270,7 @@ header{
     display: flexbox;
     flex-flow: row wrap;
     box-sizing: border-box;
-    width: 80%;
+    width: 60%;
     margin: 0;
 }
 
@@ -279,11 +288,13 @@ header{
     width: 38%;
     height: 1vh;
     text-align: center;
+    font-size: x-large;
 }
 
 .tabla th{
     display: flexbox;
     padding: 1vh;
+    font-size: larger;
     border: 1px solid #fff;
 }
 
@@ -291,7 +302,9 @@ header{
 .details_body{
     width: 100vw;
     height: 86vh;
-    background-color: #fff;
+    background-color: #6C1BF7;
+    color: #fff;
+    font-size: x-large;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -309,6 +322,7 @@ header{
     padding: 1%;
     display: inline-flex;
     border: 10px solid #000;
+    background-color: #000;
 }
 .detail_info{
     justify-content: center;
